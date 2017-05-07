@@ -1,5 +1,6 @@
 package com.dev.lambda.lambdabrewer.Data;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -18,6 +19,11 @@ class BJCPStyles {
 
     static BJCPStyles getInstance() {
         return ourInstance;
+    }
+
+    private Context context;
+    public void init(Context context){
+        this.context = context.getApplicationContext();
     }
 
     private BJCPStyles() {
@@ -43,7 +49,7 @@ class BJCPStyles {
     public String loadJSONFromAsset() {
         String json = null;
         try {
-            InputStream is = this.getAssets().open("styleguideBJCP.json");
+            InputStream is = context.getAssets().open("styleguideBJCP.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
