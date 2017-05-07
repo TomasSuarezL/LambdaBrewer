@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:title="Nueva Receta"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="com.dev.lambda.lambdabrewer.AltaReceta">
+
+            <View
+                android:id="@+id/centerShim"
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+                android:layout_centerHorizontal="true"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti_nombre"
+                style="@style/TextInputLayout"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/et_nombre"
+                    style="@style/EditorFieldStyle"
+                    android:hint="Nombre"
+                    android:inputType="textPersonName" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tv_estilo"
+                style="@style/CategoryStyle"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/ti_nombre"
+                android:layout_marginLeft="16dp"
+                android:text="Estilo" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tv_estilo"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@+id/tv_estilo"
+                android:minWidth="260dp" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_volumen"
+                    style="@style/TextInputLayout"
+                    android:layout_below="@id/tv_estilo"
+                    android:layout_toLeftOf="@id/centerShim">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_volumen"
+                        style="@style/EditorFieldStyle"
+                        android:hint="Volumen"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_color"
+                    style="@style/TextInputLayout"
+                    android:layout_toRightOf="@id/centerShim"
+                    android:layout_below="@id/tv_estilo">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_color"
+                        style="@style/EditorFieldStyle"
+                        android:hint="Color"
+                        android:inputType="textPersonName" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_densidad_inicial"
+                    style="@style/TextInputLayout"
+                    android:layout_below="@id/ti_volumen"
+                    android:layout_toLeftOf="@id/centerShim">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_densidad_inicial"
+                        style="@style/EditorFieldStyle"
+                        android:hint="Densidad Inicial"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_densidad_final"
+                    style="@style/TextInputLayout"
+                    android:layout_below="@id/ti_volumen"
+                    android:layout_toRightOf="@id/centerShim">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_densidad_final"
+                        style="@style/EditorFieldStyle"
+                        android:hint="Densidad Final"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_alcohol"
+                    style="@style/TextInputLayout"
+                    android:layout_below="@id/ti_densidad_inicial"
+                    android:layout_toLeftOf="@id/centerShim">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_alcohol"
+                        style="@style/EditorFieldStyle"
+                        android:hint="Alcohol"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ti_ibus"
+                    style="@style/TextInputLayout"
+                    android:layout_below="@id/ti_densidad_inicial"
+                    android:layout_toRightOf="@id/centerShim">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_ibus"
+                        style="@style/EditorFieldStyle"
+                        android:hint="IBU"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ti_ibus"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="24dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:onClick="nuevaReceta"
+                android:padding="16dp"
+                android:text="Aceptar"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

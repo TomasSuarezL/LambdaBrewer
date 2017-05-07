@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+    <!--This TextView holds the weather data for one particular day in the forecast-->
+    <TextView
+        android:id="@+id/tv_receta_id"
+        style="@style/RecyclerTextView"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tv_receta_nombre"
+        style="@style/RecyclerTextView"
+        tools:text="Marca Carrefour"
+        android:layout_toRightOf="@id/tv_receta_id"/>
+
+    <TextView
+        android:id="@+id/tv_receta_estilo"
+        style="@style/RecyclerTextView"
+        tools:text="Marca Carrefour"
+        android:layout_alignParentRight="true"
+        android:paddingRight="8dp"/>
+
+    <!--This View serves as a visual divider between list items-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dadada"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_alignBottom="@id/tv_receta_nombre"/>
+</RelativeLayout>

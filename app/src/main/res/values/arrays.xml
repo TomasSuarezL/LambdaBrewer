@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Estilos">
+        <item>Golden</item>
+        <item>IPA</item>
+        <item>AAA</item>
+        <item>Stout</item>
+        <item>Porter</item>
+        <item>Scotch</item>
+        <item>Saison</item>
+        <item>Otras</item>
+    </string-array>
+</resources>
