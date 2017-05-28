@@ -1,53 +1,64 @@
 package com.dev.lambda.lambdabrewer;
 
-import android.app.ActionBar;
 import android.content.Intent;
-import android.content.res.AssetManager;
-import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.dev.lambda.lambdabrewer.Fragments.Alarmas;
 import com.dev.lambda.lambdabrewer.Fragments.Dashboard;
 import com.dev.lambda.lambdabrewer.Fragments.Recetas;
-import com.vstechlab.easyfonts.EasyFonts;
+import com.dev.lambda.lambdabrewer.Data.BJCPStyles;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
-    private ViewPager viewPager;
-
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.pager) ViewPager viewPager;
+    @BindView(R.id.tab_layout) TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        viewPager = (ViewPager) findViewById(R.id.pager);
         setupViewPager(viewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_recetas);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_dashboard);
+        tabLayout.getTabAt(2).setIcon(R.drawable.ic_alarmas);
+
+        //INICIALIZO BJCPStyles para obtener context
+        try {
+            InputStream is = this.getAssets().open("styleguideBJCP.json");
+            BJCPStyles.getInstance().init(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String prueba = BJCPStyles.getInstance().getNameOfStyleTest();
+
+        Log.d("INFO",prueba);
     }
 
     private void setupViewPager(ViewPager viewPager) {
@@ -83,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
+            //return mFragmentTitleList.get(position);
+            return "";
         }
 
 

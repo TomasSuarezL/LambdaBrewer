@@ -7,7 +7,6 @@ import java.sql.Date;
 /**
  * Created by Tomas on 18/3/2017.
  */
-
 public final class RecetasContract {
 
     private RecetasContract() {}
