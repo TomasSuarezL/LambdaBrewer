@@ -4,12 +4,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.raizlabs.android.dbflow.annotation.Database;
 
 /**
  * Created by Tomas on 18/3/2017.
  */
-@Database(name="recetas", version = 1)
 public class RecetasDbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;

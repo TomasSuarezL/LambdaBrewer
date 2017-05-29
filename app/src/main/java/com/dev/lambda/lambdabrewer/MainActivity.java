@@ -18,6 +18,7 @@ import com.dev.lambda.lambdabrewer.Fragments.Alarmas;
 import com.dev.lambda.lambdabrewer.Fragments.Dashboard;
 import com.dev.lambda.lambdabrewer.Fragments.Recetas;
 import com.dev.lambda.lambdabrewer.Data.BJCPStyles;
+import com.dev.lambda.lambdabrewer.Model.Estilo;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -56,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        String prueba = BJCPStyles.getInstance().getNameOfStyleTest();
+        Estilo prueba = BJCPStyles.getInstance().getEstiloBjcpPorNombre("1B - American Lager");
 
-        Log.d("INFO",prueba);
+        Log.d("INFO",prueba.IBUmin);
     }
 
     private void setupViewPager(ViewPager viewPager) {

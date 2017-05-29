@@ -32,9 +32,31 @@
                 android:visibility="invisible"
                 android:layout_centerHorizontal="true"/>
 
+
+            <TextView
+                android:id="@+id/tv_estilo"
+                style="@style/CategoryStyle"
+                android:layout_marginLeft="16dp"
+                android:text="Estilo"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_below="@+id/tv_estilo"
+                android:minWidth="260dp"
+                android:minHeight="32dp"/>
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/ti_nombre"
                 style="@style/TextInputLayout"
+                android:layout_below="@id/spinner"
                 app:errorEnabled="true"
                 app:hintAnimationEnabled="true"
                 app:hintEnabled="true">
@@ -47,29 +69,10 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <TextView
-                android:id="@+id/tv_estilo"
-                style="@style/CategoryStyle"
-                android:layout_alignParentStart="true"
-                android:layout_below="@id/ti_nombre"
-                android:layout_marginLeft="16dp"
-                android:text="Estilo" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/tv_estilo"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_toRightOf="@+id/tv_estilo"
-                android:minWidth="260dp" />
-
-
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/ti_volumen"
                     style="@style/TextInputLayout"
-                    android:layout_below="@id/tv_estilo"
+                    android:layout_below="@id/ti_nombre"
                     android:layout_toLeftOf="@id/centerShim">
 
                     <android.support.design.widget.TextInputEditText
@@ -84,7 +87,7 @@
                     android:id="@+id/ti_color"
                     style="@style/TextInputLayout"
                     android:layout_toRightOf="@id/centerShim"
-                    android:layout_below="@id/tv_estilo">
+                    android:layout_below="@id/ti_nombre">
 
                     <android.support.design.widget.TextInputEditText
                         android:id="@+id/et_color"
@@ -153,7 +156,7 @@
                 </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ti_ibus"
                 android:layout_centerHorizontal="true"

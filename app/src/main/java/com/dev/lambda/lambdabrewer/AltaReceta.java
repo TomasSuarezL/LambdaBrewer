@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dev.lambda.lambdabrewer.Data.BJCPStyles;
 import com.dev.lambda.lambdabrewer.Data.RecetasContract;
 import com.dev.lambda.lambdabrewer.Data.RecetasDbHelper;
 import com.vstechlab.easyfonts.EasyFonts;
@@ -81,15 +82,13 @@ public class AltaReceta extends AppCompatActivity {
 
     public void populateSpinner() {
 //        //POPULATE SPINNER
-//        // Create an ArrayAdapter using the string array and a default spinner layout
-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-//                R.array.Estilos, android.R.layout.simple_spinner_item);
-//        // Specify the layout to use when the list of choices appears
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        // Apply the adapter to the spinner
-//        sEstilo.setAdapter(adapter);
-//
-//        sEstilo.setSelection(0);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        // Specify the layout to use when the list of choices appears
+        // Apply the adapter to the spinner
+        String[] items = BJCPStyles.getInstance().getStylesArray();
+        sEstilo.setAdapter(new ArrayAdapter<String>(this,
+                R.layout.spinner_item, items));
+        sEstilo.setSelection(0);
 
     }
 
