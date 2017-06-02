@@ -22,19 +22,31 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
         <item name="android:minWidth">100dp</item>
     </style>
+    <!-- Style for TextEdit -->
+    <style name="TextEditStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
 
-    <!-- Style for an EditText field in the editor -->
+    <!-- Style for an TextView field in the editor -->
+    <style name="TextViewStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
     <style name="EditorFieldStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textAppearance">?android:textAppearanceMedium</item>
-        <item name="android:minWidth">160dp</item>
-        <item name="android:layout_margin">4dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <!-- Style for the measurement units for an EditText field in the editor -->
@@ -80,9 +92,7 @@
     <style name="TextInputLayout">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:paddingRight">8dp</item>
-        <item name="android:paddingTop">16dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 

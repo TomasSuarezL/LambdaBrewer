@@ -55,7 +55,7 @@ public class AltaReceta extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alta_receta);
+        setContentView(R.layout.activity_nueva_receta);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -74,7 +74,7 @@ public class AltaReceta extends AppCompatActivity {
 
         sEstilo = (Spinner) findViewById(R.id.spinner);
 
-        populateSpinner();
+        //populateSpinner();
         mRecetasHelper = new RecetasDbHelper(this);
         //VALIDACIONES
 
@@ -86,7 +86,7 @@ public class AltaReceta extends AppCompatActivity {
         // Specify the layout to use when the list of choices appears
         // Apply the adapter to the spinner
         String[] items = BJCPStyles.getInstance().getStylesArray();
-        sEstilo.setAdapter(new ArrayAdapter<String>(this,
+        sEstilo.setAdapter(new ArrayAdapter<>(this,
                 R.layout.spinner_item, items));
         sEstilo.setSelection(0);
 
